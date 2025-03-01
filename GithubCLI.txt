@@ -1,0 +1,20 @@
+--------------------------To get the last created repo with the url----------------------------------
+
+PS C:\Users\LAKSHMAN\Desktop\HRMS\demo> gh repo list --json name,url -q '.[0]'
+{
+  "name": "login-form-practice",
+  "url": "https://github.com/lakshmansinghmalviya/login-form-practice"
+}
+
+
+------Automatically Add Remote to a Local Repo-------------
+If you want to automatically add the remote URL to your local Git project:
+
+git remote add origin $(gh repo view lakshmansinghmalviya/login-form-practice --json url -q .url)
+
+---------------To get the limited repos urls-------------------------
+gh repo list --limit 5 --json name,url -q '.[]'
+
+---------To get the particular repo url---------------------
+gh repo view lakshmansinghmalviya/login-form-practice --json url -q .url
+
